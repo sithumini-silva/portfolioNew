@@ -456,7 +456,6 @@
             color: #777;
             font-size: 0.9rem;
         }
-
         /* Responsive Styles */
         /* Laptop Large: 1440px */
         @media (max-width: 1440px) {
@@ -623,6 +622,7 @@
                 padding: 1.5rem;
             }
         }
+
     </style>
 </head>
 
@@ -695,6 +695,48 @@
         </div>
         <div class="about-image">
             <img src="" alt="Team working together">
+        </div>
+    </div>
+</section>
+
+<!-- Education Section -->
+<section class="section" id="education">
+    <div class="section-title">
+        <h2>Education</h2>
+        <p>My Path to Knowledge</p>
+    </div>
+         <div class="timeline-item left">
+            <div class="timeline-content">
+                <div class="timeline-date">2018</div>
+                <h3 class="timeline-title">G.C.E Ordinary Level</h3>
+                <div class="timeline-institution">Kalutara Gnanodaya National School</div>
+                <p class="timeline-description">I completed my G.C.E. Ordinary Level with strong results, which helped me lay a solid foundation for my academic journey.</p>
+            </div>
+        </div><br>
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <div class="timeline-date">2021</div>
+                <h3 class="timeline-title">G.C.E Advanced Level</h3>
+                <div class="timeline-institution">Kalutara Gnanodaya National School</div>
+                <p class="timeline-description">I completed my G.C.E. Advanced Level in the Arts stream, focusing on Information Technology, Logic, and Sinhala to develop a strong blend of technical expertise and critical thinking skills.</p>
+            </div>
+        </div><br>
+    <div class="timeline-item right">
+        <div class="timeline-content">
+            <div class="timeline-date">2016 - 2018</div>
+            <h3 class="timeline-title">Information and Communication Technology</h3>
+            <div class="timeline-institution">Weerawardhana computer center</div>
+            <p class="timeline-description">I successfully completed the ICT course from Level 1 to Level 4, mastering the essentials of technology and communication.</p>
+        </div>
+    </div><br>
+    <div class="timeline">
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <div class="timeline-date">2023 - Present</div>
+                <h3 class="timeline-title">Graduate Diploma in Software Engineering</h3>
+                <div class="timeline-institution">Institute of Java and Software Engineering (IJSE)</div>
+                <p class="timeline-description">Currently pursuing advanced studies in software engineering with a focus on full-stack development, software architecture, and modern programming paradigms.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -812,22 +854,22 @@
             <form>
                 <div class="form-group">
                     <label for="name">Your Name</label>
-                    <input type="text" id="name" placeholder="sithu silva" required>
+                    <input type="text" id="name" required>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Your Email</label>
-                    <input type="email" id="email" placeholder="sithu@example.com" required>
+                    <input type="email" id="email" required>
                 </div>
 
                 <div class="form-group">
                     <label for="subject">Subject</label>
-                    <input type="text" id="subject" placeholder="Project Inquiry">
+                    <input type="text" id="subject">
                 </div>
 
                 <div class="form-group">
                     <label for="message">Your Message</label>
-                    <textarea id="message" placeholder="Hello, I'd like to talk about..."></textarea>
+                    <textarea id="message"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Send Message</button>
@@ -860,23 +902,6 @@
     </div>
 </footer>
 
-<script>
-    // Toggle mobile menu
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('nav ul');
-
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-    });
-
-    // Close menu when clicking on a link
-    const navLinks = document.querySelectorAll('nav ul li a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-        });
-    });
-</script>
 
 </body>
 </html>
