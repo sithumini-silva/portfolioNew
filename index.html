@@ -269,6 +269,124 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
         }
 
+        /* Education Section */
+        .section {
+            padding: 5rem 5%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--light);
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+        .section-title p {
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        /* Move the timeline line to the left */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 0; /* Place the line on the left */
+            margin-left: 0; /* No need to shift the line */
+            border-radius: 10px;
+        }
+
+        /* Timeline Item */
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+        /* Adjusting Positioning */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            left: -12px;
+            background: var(--gradient);
+            border: 4px solid var(--light);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            margin-left: 40px; /* Move content to the right of the line */
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-date {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .timeline-institution {
+            font-style: italic;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            color: var(--accent);
+        }
+
+        .timeline-description {
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
         /* Projects Section */
         .projects-grid {
             display: grid;
@@ -456,172 +574,7 @@
             color: #777;
             font-size: 0.9rem;
         }
-        /* Responsive Styles */
-        /* Laptop Large: 1440px */
-        @media (max-width: 1440px) {
-            .hero h1 {
-                font-size: 3.2rem;
-            }
-            .section-title h2 {
-                font-size: 2.3rem;
-            }
-        }
 
-        /* Laptop: 1024px */
-        @media (max-width: 1024px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding-top: 100px;
-                padding-bottom: 3rem;
-            }
-            .hero-content {
-                padding-right: 0;
-                margin-bottom: 3rem;
-            }
-            .hero p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .cta-buttons {
-                justify-content: center;
-            }
-            .social-links {
-                justify-content: center;
-            }
-            .about-content {
-                flex-direction: column;
-            }
-            .about-text, .about-image {
-                width: 100%;
-            }
-            .contact-container {
-                flex-direction: column;
-            }
-        }
-
-        /* Tablet: 768px */
-        @media (max-width: 768px) {
-            header {
-                padding: 1rem 5%;
-            }
-            .logo {
-                font-size: 1.5rem;
-            }
-            nav ul {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: white;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 3rem;
-                transition: all 0.5s ease;
-            }
-            nav ul.active {
-                left: 0;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            .hero p {
-                font-size: 1.1rem;
-            }
-            .section {
-                padding: 4rem 5%;
-            }
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            .contact-container {
-                padding: 2rem;
-            }
-        }
-
-        /* Mobile Large: 425px */
-        @media (max-width: 425px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            .cta-buttons {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            .about-text h3 {
-                font-size: 1.5rem;
-            }
-            .skills {
-                justify-content: center;
-            }
-            .project-info h3 {
-                font-size: 1.2rem;
-            }
-            .project-links {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-
-        /* Mobile Medium: 375px */
-        @media (max-width: 375px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            .skill {
-                padding: 0.4rem 1rem;
-                font-size: 0.9rem;
-            }
-            .contact-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
-            .contact-text h4 {
-                font-size: 1rem;
-            }
-        }
-
-        /* Mobile Small: 320px */
-        @media (max-width: 320px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            .section-title h2 {
-                font-size: 1.6rem;
-            }
-            .btn {
-                padding: 0.7rem 1.5rem;
-            }
-            .project-tag {
-                font-size: 0.7rem;
-            }
-            .contact-container {
-                padding: 1.5rem;
-            }
-        }
 
     </style>
 </head>
@@ -705,14 +658,16 @@
         <h2>Education</h2>
         <p>My Path to Knowledge</p>
     </div>
-         <div class="timeline-item left">
+    <div class="timeline">
+        <div class="timeline-item left">
             <div class="timeline-content">
                 <div class="timeline-date">2018</div>
                 <h3 class="timeline-title">G.C.E Ordinary Level</h3>
                 <div class="timeline-institution">Kalutara Gnanodaya National School</div>
                 <p class="timeline-description">I completed my G.C.E. Ordinary Level with strong results, which helped me lay a solid foundation for my academic journey.</p>
             </div>
-        </div><br>
+        </div>
+
         <div class="timeline-item left">
             <div class="timeline-content">
                 <div class="timeline-date">2021</div>
@@ -720,16 +675,17 @@
                 <div class="timeline-institution">Kalutara Gnanodaya National School</div>
                 <p class="timeline-description">I completed my G.C.E. Advanced Level in the Arts stream, focusing on Information Technology, Logic, and Sinhala to develop a strong blend of technical expertise and critical thinking skills.</p>
             </div>
-        </div><br>
-    <div class="timeline-item right">
-        <div class="timeline-content">
-            <div class="timeline-date">2016 - 2018</div>
-            <h3 class="timeline-title">Information and Communication Technology</h3>
-            <div class="timeline-institution">Weerawardhana computer center</div>
-            <p class="timeline-description">I successfully completed the ICT course from Level 1 to Level 4, mastering the essentials of technology and communication.</p>
         </div>
-    </div><br>
-    <div class="timeline">
+
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <div class="timeline-date">2016 - 2018</div>
+                <h3 class="timeline-title">Information and Communication Technology</h3>
+                <div class="timeline-institution">Weerawardhana computer center</div>
+                <p class="timeline-description">I successfully completed the ICT course from Level 1 to Level 4, mastering the essentials of technology and communication.</p>
+            </div>
+        </div>
+
         <div class="timeline-item left">
             <div class="timeline-content">
                 <div class="timeline-date">2023 - Present</div>
