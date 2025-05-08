@@ -397,7 +397,7 @@
         }
         .experience-date {
             flex: 0 0 150px;
-            color: var(--primary);
+            color: var(--accent);
             font-weight: 600;
         }
         .experience-details {
@@ -408,13 +408,20 @@
             margin-bottom: 0.5rem;
         }
         .experience-company {
-            color: #666;
+            color: var(--primary);
             margin-bottom: 0.5rem;
             font-weight: 600;
         }
         .experience-description {
             color: #555;
             line-height: 1.6;
+        }
+        #exImage{
+            width: 200px;
+            height: 150px;
+            margin: 10px;
+            border-radius: 15px;
+            border: 2px solid var(--dark);
         }
 
         /* Projects Section */
@@ -735,16 +742,24 @@
     </div>
     <div class="experience-container">
         <div class="experience-item">
-            <div class="experience-date">2022 - 2023</div>
+            <div class="experience-date">
+                2022 - 2023
+                <img id="exImage" src="assets/images/wealth.jpg" alt="Wealth bank">
+            </div>
             <div class="experience-details">
                 <h3 class="experience-title">Banking Assistant</h3>
                 <div class="experience-company">Wealth Coop Development Bank Sri Lanka</div>
                 <p class="experience-description">
-                    I have gained valuable experience working in the daily operations of Wealth Coop Development Bank,
-                    contributing to customer service, administrative tasks, and various banking functions.
+                    During my time at Wealth Coop Development Bank Sri Lanka,
+                    I have gained valuable hands-on experience by actively participating in the bank's day-to-day operations.
+                    My responsibilities included assisting with customer service inquiries,
+                    supporting administrative processes, handling routine banking tasks,
+                    and ensuring smooth operational workflows-allowing me to develop strong organizational,
+                    communication, and service-oriented skills.
                 </p>
             </div>
         </div>
+    </div>
 </section>
 
 <!-- Projects Section -->
