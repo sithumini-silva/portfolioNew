@@ -307,7 +307,6 @@
             margin: 0 auto;
             padding: 20px 0;
         }
-        /* Move the timeline line to the left */
         .timeline::after {
             content: '';
             position: absolute;
@@ -319,8 +318,6 @@
             margin-left: 0; /* No need to shift the line */
             border-radius: 10px;
         }
-
-        /* Timeline Item */
         .timeline-item {
             padding: 10px 40px;
             position: relative;
@@ -331,8 +328,6 @@
             flex-direction: row;
             justify-content: flex-start;
         }
-
-        /* Adjusting Positioning */
         .timeline-item::after {
             content: '';
             position: absolute;
@@ -345,7 +340,6 @@
             border-radius: 50%;
             z-index: 1;
         }
-
         .timeline-content {
             padding: 20px 30px;
             background: white;
@@ -355,32 +349,27 @@
             width: 100%;
             margin-left: 40px; /* Move content to the right of the line */
         }
-
         .timeline-content:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
-
         .timeline-date {
             color: var(--primary);
             font-weight: 600;
             margin-bottom: 0.5rem;
             font-size: 0.9rem;
         }
-
         .timeline-title {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
             color: var(--dark);
         }
-
         .timeline-institution {
             font-style: italic;
             margin-bottom: 0.8rem;
             font-size: 0.95rem;
             color: var(--accent);
         }
-
         .timeline-description {
             color: #555;
             line-height: 1.6;
@@ -695,6 +684,26 @@
             </div>
         </div>
     </div>
+</section>
+
+<!-- Experience Section -->
+<section class="section" id="experience">
+    <div class="section-title">
+        <h2>Experience</h2>
+        <p>My professional journey</p>
+    </div>
+    <div class="experience-container">
+        <div class="experience-item">
+            <div class="experience-date">2022 - 2023</div>
+            <div class="experience-details">
+                <h3 class="experience-title">Banking Assistant</h3>
+                <div class="experience-company">Wealth Coop Development Bank Sri Lanka</div>
+                <p class="experience-description">
+                    I have gained valuable experience working in the daily operations of Wealth Coop Development Bank,
+                    contributing to customer service, administrative tasks, and various banking functions.
+                </p>
+            </div>
+        </div>
 </section>
 
 <!-- Projects Section -->
