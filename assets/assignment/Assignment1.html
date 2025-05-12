@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <link name="stylesheet" href="../assets/lib/fontawesome">
+
+  <style>
+    body{
+      background-color: #E8F9FF;
+    }
+
+    /*header*/
+    body>header {
+      height: 50px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      background-color: #FFF6E9;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    body>header>img {
+      height: 50px;
+      width: 50px;
+      border-radius: 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    #nav1 {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    #nav1 a {
+      margin: 0 15px;
+      color: #333;
+      font-size: 16px;
+    }
+
+    #menu1 {
+      display: none;
+      position: absolute;
+      right: 10px;
+      top: 13px;
+      font-size: 24px;
+    }
+
+    /*home*/
+    #home {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+    }
+
+    #home div {
+      text-align: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    #home h1, #home h2, #homebutton {
+      position: relative;
+      top: 60px;
+      margin: 10px 10px 10px 10px;
+    }
+
+    #homepic {
+      max-width: 200px;
+      height: auto;
+      border: 3px solid #000957;
+      border-radius: 20px;
+      position: relative;
+      margin: 10px 10px 10px 10px;
+
+    }
+
+    /*services*/
+    #service{
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      position: relative;
+      left: 0;
+      right: 0;
+    }
+    .card {
+      border: 2px solid navy;
+      background-color: #EEEEEE;
+      color: #1A120B;
+      border-radius: 10px;
+      margin: 1px;
+      padding: 15px;
+      text-align: center;
+      display: inline-block;
+    }
+    .card h4 {
+      font-size: 20px;
+    }
+    .button {
+      padding: 8px 16px;
+      background-color: #1A120B;
+      color: white;
+      border-radius: 8px;
+    }
+
+    .button:hover {
+      background-color: #9AA6B2;
+      color: #1A120B;
+    }
+
+    /*awards section*/
+    #aword {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      padding: 40px 20px;
+    }
+
+    iframe {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+    #aword div{
+      position: relative;
+      top: 0;
+      left: 10px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 28px;
+    }
+    footer{
+      background: #000957;
+    }
+    footer>div{
+      color: white;
+      text-align: center;
+      padding: 0px 0px;
+      font-size: small;
+    }
+    @media all and (max-width: 1200px) {
+      #service {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @media all and (max-width: 700px) {
+      #service {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media all and (max-width: 500px) {
+      #service {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media all and (max-width: 300px) {
+      #service {
+        grid-template-columns: 1fr;
+      }
+      #home {
+        grid-template-columns: 1fr;
+      }
+      #aword {
+        grid-template-columns: 1fr;
+      }
+      #nav1 {
+        display: none;
+      }
+      #menu1 {
+        display: block;
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+<header>
+  <img src="assets/images/bee.jpg" alt="Logo">
+  <i class="fa-solid fa-bars" id="menu1"></i>
+
+  <nav id="nav1">
+    <a href="">Home</a>
+    <a href="">About</a>
+    <a href="">Service</a>
+    <a href="">Awards</a>
+  </nav>
+</header>
+
+<!--Home-->
+<section id="home">
+  <div>
+    <h1 id="hname">Sithumini</h1>
+    <h2 id="hroll">Full stack developer</h2>
+    <button class="button" id="homebutton">Explore</button>
+  </div>
+  <div>
+    <img src="assets/images/imagesgirl.jpg" id="homepic" alt="Home Image">
+  </div>
+</section>
+
+<!--services-->
+<h1>Services</h1>
+<section id="service">
+  <div class="card">
+    <h4>Web Design</h4>
+    <p>
+      I create visually appealing,
+      responsive websites that provide an engaging user
+      experience across all devices.
+    </p>
+    <button class="button">Button</button>
+  </div>
+
+  <div class="card">
+    <h4>Web Design</h4>
+    <p>
+      I create visually appealing,
+      responsive websites that provide an engaging user
+      experience across all devices.
+    </p>
+    <button class="button">Button</button>
+  </div>
+
+  <div class="card">
+    <h4>Web Design</h4>
+    <p>
+      I create visually appealing,
+      responsive websites that provide an engaging user
+      experience across all devices.
+    </p>
+    <button class="button">Button</button>
+  </div>
+
+  <div class="card">
+    <h4>Web Design</h4>
+    <p>
+      I create visually appealing,
+      responsive websites that provide an engaging user
+      experience across all devices.
+    </p>
+    <button class="button">Button</button>
+  </div>
+</section>
+
+<!--Awards-->
+<section id="aword">
+  <iframe width="500" height="300" src="https://www.youtube.com/embed/HGTJBPNC-Gw" title="HTML &amp; CSS Full Course for free 🌎" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <div>
+    <h1>Awards</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam aperiam assumenda deserunt doloremque ea esse eveniet explicabo facere illo iste necessitatibus possimus, quas quidem sit tenetur ullam voluptate voluptatem?
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <h2>Web Page</h2>
+  </div>
+</footer>
+
+<script src="assets/lib/fontawesome/js/all.js"></script>
+</body>
+</html>

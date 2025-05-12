@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case 01</title>
+    <link rel="stylesheet" href="../assets/lib/normalize.css">
+
+    <style>
+        nav{
+            height: fit-content;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        nav>div{
+            background-color: cornflowerblue;
+            width: 160px;
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: end;
+            align-items: center;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            padding: 5px;
+            color: #E8F9FF;
+            margin-left: -130px;
+            box-shadow: 0px 0px 5px 0px black;
+        }
+        nav>div:hover{
+            margin-left: 0;
+            background-color: darkmagenta;
+            transition-duration: 3000ms;
+            transition-timing-function: ease;
+        }
+
+    </style>
+</head>
+<body>
+
+<nav>
+    <div>
+        <div>Menu One</div>
+        <div><img src="../assets/images/contact-book.png" width="25px"></div>
+    </div>
+    <div>
+        <div>Menu Two</div>
+        <div><img src="../assets/images/shipped.png" width="25px"></div>
+    </div>
+    <div>
+        <div>Menu Three</div>
+        <div><img src="../assets/images/web.png" width="25px"></div>
+    </div>
+    <div>
+        <div>Menu Four</div>
+        <div><img src="../assets/images/layers.png" width="25px"></div>
+    </div>
+    <div>
+        <div>Menu Five</div>
+        <div><img src="../assets/images/add-to-cart.png" width="25px"></div>
+    </div>
+</nav>
+
+</body>
+</html>
