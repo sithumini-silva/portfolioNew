@@ -732,6 +732,25 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+        /* Laptop */
+        @media only screen and (max-width: 1024px) {
+            .hero-content, .hero-image {
+                flex: 1 1 100%;
+            }
+            .hero-image {
+                margin-top: 2rem;
+            }
+            .about-content {
+                flex-direction: column;
+            }
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+
 
 
     </style>
