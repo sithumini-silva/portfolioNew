@@ -798,9 +798,27 @@
                 display: block;
             }
         }
-
-
-
+        /* Mobile Large */
+        @media only screen and (max-width: 425px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .section {
+                padding: 3rem 5%;
+            }
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            .experience-item {
+                flex-direction: column;
+            }
+            .experience-date {
+                margin-bottom: 1rem;
+            }
+            .btn {
+                padding: 0.6rem 1.2rem;
+            }
+        }
 
     </style>
 </head>
