@@ -251,7 +251,15 @@
             width: 100%;
             border-radius: 20px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
         }
+        .about-image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        }
+
+
+
 
         /* Skills Section */
         #skills {
@@ -874,7 +882,7 @@
 <!-- Hero Section -->
 <section class="hero" id="home">
     <div class="hero-content">
-        <h1>Hi, I'm <span>Sithu silva</span><br>Software Developer</h1>
+        <h1 class="text">Hi, I'm <span>Sithu silva</span> <br><span>Software Developer</span></h1>
         <p>I'm software developer. I can help you solve a problem, build a product or grow existing project.</p>
         <div class="cta-buttons">
             <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -1282,25 +1290,35 @@
         </div>
 
         <div class="contact-form">
-            <form>
+            <form  onsubmit="this.reset(); return true;"  action="https://api.web3forms.com/submit" method="POST">
+
+                <!-- Required Web3Forms access key -->
+                <input type="hidden" name="access_key" value="72458c85-e9e9-4d18-bdcc-6fc4b7f3b177">
+
+                <!-- Optional hidden fields -->
+                <input type="hidden" name="subject" value="New Contact Message From Portfolio">
+                <input type="hidden" name="from_name" value="sithu silva - Portfolio">
+                <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                <input type="checkbox" name="botcheck" style="display: none;">
+
                 <div class="form-group">
                     <label for="name">Your Name</label>
-                    <input type="text" id="name" required>
+                    <input type="text" id="name" name="name" required>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Your Email</label>
-                    <input type="email" id="email" required>
+                    <input type="email" id="email" name="email" required>
                 </div>
 
                 <div class="form-group">
                     <label for="subject">Subject</label>
-                    <input type="text" id="subject">
+                    <input type="text" id="subject" name="user_subject">
                 </div>
 
                 <div class="form-group">
                     <label for="message">Your Message</label>
-                    <textarea id="message"></textarea>
+                    <textarea id="message" name="message" required></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Send Message</button>
@@ -1333,6 +1351,8 @@
     </div>
 </footer>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+<script src="JS/animation.js"></script>
 </body>
 </html>
