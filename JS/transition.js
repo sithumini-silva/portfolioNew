@@ -1,18 +1,51 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+    // Store form data in localStorage before submission
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value
+    };
+    localStorage.setItem('formSubmitted', 'true');
+    localStorage.setItem('formData', JSON.stringify(formData));
 
-    const links = document.querySelectorAll('a.transition-btn');
-    const overlay = document.querySelector('.overlay-transition');
+    // Show loading state
+    const submitBtn = this.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
 
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            overlay.classList.add('show');
-
-            // After the overlay animation (adjust timing as needed), navigate to the new page
-            setTimeout(() => {
-                window.location.href = this.getAttribute('href');
-            }, 1000); // Assuming your CSS transition is 0.5s (500ms)
-        });
-    });
-
+    // Let the form submit normally to Web3Forms
 });
+
+// After page loads
+window.addEventListener('load', function () {
+    if (localStorage.getItem('formSubmitted') === 'true') {
+        // Show success message
+        document.getElementById('success-message').style.display = 'block';
+
+        // Clear form data from localStorage
+        localStorage.removeItem('formSubmitted');
+
+        // Optionally restore form data if needed
+        const savedData = localStorage.getItem('formData');
+        if (savedData) {
+            localStorage.removeItem('formData');
+        }
+
+        // Clear form fields
+        document.getElementById('contactForm').reset();
+
+        // Hide success message after 5 seconds
+        setTimeout(function () {
+            document.getElementById('success-message').style.display = 'none';
+        }, 5000);
+    }
+});
+
+// Dark/Light Mode Toggle
+// const themeToggle = document.getElementById('themeToggle');
+// const body = document.body;
+
+// <button className="theme-toggle" id="themeToggle">
+//     <i className="fas fa-moon"></i>
+// </button>

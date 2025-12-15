@@ -1,43 +1,57 @@
-$(document).ready(function() {
-    const textElement = $(".text");
-    const originalText = textElement.text();
-    textElement.text(""); // Clear initial text
+function typeEffectHTML(element, speed) {
+    const originalHTML = element.innerHTML;
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = originalHTML;
 
+    const fullText = tempDiv.textContent; // extract plain text
     let i = 0;
-    const typingSpeed = 75; // ms per character
-    const cursorBlinkSpeed = 500; // ms
 
-    // Add blinking cursor
-    textElement.append('<span class="cursor">|</span>');
-    const cursor = $(".cursor");
+    const tagSpan = element.querySelector("span");
+    const spanText = tagSpan ? tagSpan.textContent : "";
 
-    // Start typing animation
-    const typingInterval = setInterval(function() {
-        if (i < originalText.length) {
-            textElement.html(
-                originalText.substring(0, i+1) +
-                '<span class="cursor">|</span>'
-            );
+    element.innerHTML = "";
+
+    const timer = setInterval(() => {
+        if (i <= fullText.length) {
+            let typed = fullText.substring(0, i);
+            if (typed.includes(spanText)) {
+                typed = typed.replace(spanText, `<span>${spanText}</span>`);
+            }
+            element.innerHTML = typed.replace("\n", "<br>");
             i++;
         } else {
-            clearInterval(typingInterval);
-            // Change cursor to steady after typing completes
-            cursor.css("animation", "none").css("opacity", "1");
+            clearInterval(timer);
         }
-    }, typingSpeed);
+    }, speed);
+}
 
-    // Add CSS for blinking cursor
-    $("<style>")
-        .prop("type", "text/css")
-        .html(`
-            .cursor {
-                animation: blink ${cursorBlinkSpeed}ms infinite;
-                opacity: 1;
-            }
-            @keyframes blink {
-                0%, 100% { opacity: 1; }
-                50% { opacity: 0; }
-            }
-        `)
-        .appendTo("head");
+document.addEventListener("DOMContentLoaded", function () {
+    // Apply to hero title
+    const h1 = document.querySelector(".hero h1");
+    if (h1) {
+        typeEffectHTML(h1, 75);
+    }
+
+    // Animate skill items and hero paragraph
+    const skillItems = document.querySelectorAll(".skill-item");
+    const heroItems = document.querySelectorAll(".heroP");
+
+    skillItems.forEach((item, index) => {
+        item.style.opacity = 0;
+        item.style.transform = "translateY(20px)";
+        setTimeout(() => {
+            item.style.transition = "all 0.5s ease";
+            item.style.opacity = 1;
+            item.style.transform = "translateY(0)";
+        }, index * 150);
+    });
+    heroItems.forEach((item, index) => {
+        item.style.opacity = 0;
+        item.style.transform = "translateY(20px)";
+        setTimeout(() => {
+            item.style.transition = "all 0.9s ease";
+            item.style.opacity = 1;
+            item.style.transform = "translateY(0)";
+        }, index * 150);
+    });
 });
